@@ -9,7 +9,12 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static list(data, callback){
-
+    createRequest ({
+      data,
+      callback,
+      method: "GET",
+      url: this.URL,
+    })
   }
 
   /**
@@ -18,7 +23,12 @@ class Entity {
    * что наследуется от Entity)
    * */
   static create(data, callback) {
-
+    createRequest ({
+      data,
+      callback,
+      method: "PUT",
+      url: this.URL,
+    })
   }
 
   /**
@@ -26,6 +36,15 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static remove(data, callback ) {
-
+    createRequest ({
+      data,
+      callback,
+      method: "DELET",
+      url: this.URL,
+    })
   }
+
+  
 }
+
+Entity.Url = '';
