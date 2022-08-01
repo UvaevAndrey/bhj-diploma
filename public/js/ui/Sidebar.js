@@ -29,6 +29,14 @@ class Sidebar {
    * выходу устанавливает App.setState( 'init' )
    * */
   static initAuthLinks() {
+    document.querySelector('li.menu-item_register > a').onclick = e => {
+      e.preventDefault();
+      App.getModal('register').open();
+    }
 
+    document.querySelector('.menu-item_login > a').onclick = e => {
+      e.preventDefault();
+      App.getModal('login').open();
+    }
   }
 }

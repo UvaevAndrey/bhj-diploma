@@ -36,7 +36,7 @@ class User {
   static fetch(callback) {
     createRequest ({
       url: this.URL + '/current',
-      method: 'GET'
+      method: 'GET',
       callback: (err, response) => {
         if (response && response.user) {
           this.setCurrent (response.user)
@@ -106,3 +106,5 @@ class User {
     });
   }
 }
+
+User.URL = '/user';
