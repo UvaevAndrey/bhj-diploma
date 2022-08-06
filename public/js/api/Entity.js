@@ -39,7 +39,8 @@ class Entity {
     createRequest ({
       data,
       callback,
-      method: "DELET",
+      method: "DELETE",
+      responseType: 'json',
       url: this.URL,
     })
   }

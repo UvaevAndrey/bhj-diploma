@@ -8,7 +8,7 @@ const createRequest = (options = {}) => {
 
     const formData = new FormData();
     let queryParams = '';
-    if (options.data !== undefined) {
+    if (options.data) {
         if (options.method === 'GET') {
             queryParams = '?' + Object.entries(options.data).map 
             (([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`

@@ -12,8 +12,11 @@ class Modal {
    * необходимо выкинуть ошибку.
    * */
   constructor(element){
-    this.element = element;
-    this.registerEvents();
+    if (!element){
+      throw new Error("Элемент не задан");
+    }
+      this.element = element;
+      this.registerEvents();
   }
 
   /**

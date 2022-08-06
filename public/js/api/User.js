@@ -96,7 +96,6 @@ class User {
     createRequest({
       url: this.URL + '/logout',
       method: 'POST',
-      data,
       callback: (err, response) => {
         if (response && response.success) {
          this.unsetCurrent();
