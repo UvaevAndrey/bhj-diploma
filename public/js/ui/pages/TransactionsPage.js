@@ -31,10 +31,12 @@
    * TransactionsPage.removeAccount соответственно
    * */
   registerEvents() {
-    const removeAccountButton = this.element.querySelector(".remove-account");
-
-		removeAccountButton.addEventListener("click", () => {
-			this.removeAccount();
+    
+    this.element.addEventListener("click", event => {
+			if (event.target.closest(".remove-account")) {
+				let id = event.target.closest(".remove-account").dataset.id;
+				this.removeAccount(id);
+			}
 		});
 
 		this.element.addEventListener("click", event => {
@@ -58,8 +60,8 @@
     if (this.lastOptions) {
       const id = this.lastOptions.account_id;
       if (confirm('Вы действительно хотите удалить счёт?')) {
-        Account.remove({id}, (err, response) => {
-          if (err === null && response.success) {
+        Account.remove({id}, (err, resp) => {
+          if (resp) {
             this.clear();
             App.update()
           };
@@ -77,7 +79,8 @@
   removeTransaction(id) {
     if (confirm("Вы действительно хотите удалить эту транзакцию?")) {
     Transaction.remove({id}, (err, resp) => {
-				if (err === null && resp.success) {
+      console.log (resp)
+				if (resp) {
 					App.update();
 				}
 			});
@@ -95,14 +98,15 @@
     if (!options) {
       return
     }
+    
     Account.get(options.account_id, (err, response) => {
-      if (err === null && response.success) {
+      if (response) {
         this.renderTitle(response.data.name);
       }
     })
     
     Transaction.list(options, (err, response) => {
-      if(err === null && response.success) {
+      if(response) {
         this.renderTransactions(response.data);
       }
     });

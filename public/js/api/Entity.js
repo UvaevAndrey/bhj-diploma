@@ -13,6 +13,7 @@ class Entity {
       data,
       callback,
       method: "GET",
+      responseType: 'json',
       url: this.URL,
     })
   }
@@ -27,6 +28,7 @@ class Entity {
       data,
       callback,
       method: "PUT",
+      responseType: 'json',
       url: this.URL,
     })
   }
@@ -43,9 +45,7 @@ class Entity {
       responseType: 'json',
       url: this.URL,
     })
-  }
-
   
+  }
 }
-
-Entity.Url = '';
+Entity.URL = 'string'

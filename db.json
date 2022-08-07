@@ -23,65 +23,36 @@
       "email": "Push@Push",
       "password": "Push",
       "id": "1kqb2a4osl6hrsk19"
+    },
+    {
+      "name": "gyt",
+      "email": "gyt@gyt",
+      "password": "gyt",
+      "id": "1kqb2a1ngl6jkuw1a"
+    },
+    {
+      "name": "ddd",
+      "email": "ddd@ddd",
+      "password": "ddd",
+      "id": "1kqb2a3mgl6jn4ekt"
     }
   ],
   "accounts": [
     {
-      "name": "Магазин",
-      "user_id": "1",
-      "id": "2"
-    },
-    {
       "name": "р",
       "user_id": "1kqb2a9n8l6ay24ip",
       "id": "1kqb2a6vkl6hqxvtn"
+    },
+    {
+      "name": "123",
+      "user_id": "1",
+      "id": "1kqb2a7yol6jky63k"
+    },
+    {
+      "name": "sdf",
+      "user_id": "1",
+      "id": "1kqb2a45gl6jly0lp"
     }
   ],
-  "transactions": [
-    {
-      "account_id": "2",
-      "created_at": "2019-09-26 16:23:02",
-      "id": "4",
-      "name": "Молочные продукты",
-      "sum": 100,
-      "type": "income",
-      "user_id": "1"
-    },
-    {
-      "account_id": "2",
-      "created_at": "2019-09-25 15:03:02",
-      "id": "5",
-      "name": "Фрукты",
-      "sum": 250,
-      "type": "income",
-      "user_id": "1"
-    },
-    {
-      "account_id": "2",
-      "created_at": "2019-09-25 15:03:02",
-      "id": "17",
-      "name": "Овощи",
-      "sum": 300,
-      "type": "income",
-      "user_id": "1"
-    },
-    {
-      "account_id": "2",
-      "created_at": "2019-09-26 14:47:02",
-      "id": "6",
-      "name": "Мясо",
-      "sum": 600,
-      "type": "income",
-      "user_id": "1"
-    },
-    {
-      "account_id": "2",
-      "created_at": "2019-09-27 13:27:02",
-      "id": "7",
-      "name": "Долг в банк",
-      "sum": 5000,
-      "type": "expense",
-      "user_id": "1"
-    }
-  ]
+  "transactions": []
 }

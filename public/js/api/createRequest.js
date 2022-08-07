@@ -3,7 +3,7 @@
  * на сервер.
  * */
 const createRequest = (options = {}) => {
-    const xhr = new XMLHttpRequest;
+    let xhr = new XMLHttpRequest;
     xhr.responseType = 'json';
 
     const formData = new FormData();
@@ -37,9 +37,20 @@ const createRequest = (options = {}) => {
             options.callback(err, resp);
         }
         
-    }
+    };
 
-    xhr.open(options.method, options.url + queryParams);
+    xhr.onload = () => {
+        let err = null;
+        let response = xhr.response; 
+        options.callback(err, response);
+    };
+
+    xhr.onerror = () => {
+        alert(`Ошибка соединения ${xhr.status}: ${xhr.statusText}`);
+    };
+
+
+    xhr.open(options.method, options.url + queryParams, true);
     xhr.send(formData);
     return xhr;
 };
